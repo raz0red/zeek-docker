@@ -19,9 +19,11 @@ jobs:
         
     - name: Build Zeek Docker image
       run: |
-        docker build -t zeek:zeek .
+        docker build -t zeek:latest .
 
     - name: Create Zeek Docker container
       run: |
-        docker run -d zeek:zeek
+        docker run -d --name zeek \
+          -v $PWD/test/volumes/etc:/opt/zeek/etc \
+          zeek:latest
 
