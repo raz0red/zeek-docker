@@ -1,0 +1,3 @@
+run.sh
+test/volumes/logs
+test/volumes/spool

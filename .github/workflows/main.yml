@@ -25,5 +25,7 @@ jobs:
       run: |
         docker run -d --name zeek \
           -v $PWD/test/volumes/etc:/opt/zeek/etc \
+          -v $PWD/test/volumes/logs:/opt/zeek/logs \
+          -v $PWD/test/volumes/spool:/opt/zeek/spool \
           zeek:latest
 
