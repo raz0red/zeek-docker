@@ -17,6 +17,11 @@ jobs:
       with:
         submodules: recursive
         
-    - name: Docker build of Zeek
+    - name: Build Zeek Docker image
       run: |
         docker build -t zeek:zeek .
+
+    - name: Create Zeek Docker container
+      run: |
+        docker run -d zeek:zeek
+
