@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source "$SCRIPT_DIR/../common.sh"
+
+echo "Deploying Zeek..."
+zeekctl deploy \
+    || { fail 'Error deploying Zeek.'; }
