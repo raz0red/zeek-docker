@@ -29,3 +29,7 @@ jobs:
           -v $PWD/test/volumes/spool:/opt/zeek/spool \
           zeek:latest
 
+    - name: Execute CI
+      run: |
+        cd test
+        ./test.sh
